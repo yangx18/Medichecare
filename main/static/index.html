@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yang's App</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1><font color="red">MedicationCare.</font></h1>
+    Put Your Medication here:
+    
+<input type="text" value = "Input here" >
+<br>
+	  Put the time you gonna take it:
+      
+<input type="text" value = "Input here" >
+<button type="submit" id="btn_submit" onclick="btnAction()"> submit </button>
+<p><font color="blue", size="2">(Write down what you need to take, and time first.Then push Enter, Or you can click submit then click your medication name and the taking time )</font></p>
+
+<br>
+    <ul>
+    <li><font size="2", color ="green">Take care of yourself, Once you done it you can click Done button !</font></li>
+
+    <ul>
+    <script language="javascript">
+       
+
+       document.getElementsByTagName("input")[0].onkeydown = function(e) {
+
+            
+            
+            if(e.keyCode == 13) {
+                // Enter's Acsii
+             if(this.value==""){
+             alert("put something in the textbox")
+           
+             }else{
+              
+               
+                addMedication(this.value);
+                //addData
+                document.getElements("input")[0].empty();
+                //deleteData
+                }
+            }
+        }
+  document.getElementsByTagName("input")[1].onkeydown = function(e) {
+
+           
+            
+            if(e.keyCode == 13) {
+                // Enter's Acsii
+             if(this.value==""){
+             alert("put something in the textbox")
+           
+             }else{
+              
+               
+                addMedication(this.value);
+                //addData
+                document.getElements("input")[0].empty();
+                //deleteData
+                }
+            }
+        }
+ 
+        
+        function btnAction()
+        {	
+        	 var Input = document.getElementsByTagName("input")[0].onclick = function(event) {
+            
+            var event =  window.event;
+            if(this.value==""){
+             alert("put something in the text box")
+            }else{
+              
+              
+                addMedication(this.value);
+                //addData
+                document.getElements("input")[0].empty();
+                //deleteData
+                }
+            
+        }
+        
+         var Input = document.getElementsByTagName("input")[1].onclick = function(event) {
+            
+            var event =  window.event;
+            if(this.value==""){
+             alert("put something in the text box")
+            }else{
+              
+              
+                addMedication(this.value);
+                //addData
+                document.getElements("input")[0].empty();
+                //deleteData
+                }
+            
+        }
+        
+        }
+
+           document.getElementsByTagName("ul")[0].onclick = function(e) {
+            
+            var target = e.target;
+            if(target.name == "Done") {
+
+	target.parentNode.parentNode.removeChild(target.parentNode);
+            }
+             
+           
+        }
+
+        function addMedication(data)  {
+            
+            var btn = document.createElement("button");
+            var t = document.createTextNode("Done");
+           		btn.appendChild(t);
+             	btn.name = "Done";
+                
+            var theValue = document.createElement("span");
+	 		var node= document.createElement("P");    
+		
+            theValue.innerHTML = data;
+            node.appendChild(theValue);
+            node.appendChild(btn);
+            
+         document.getElementsByTagName("ul")[0].appendChild(node);
+           
+        };
+        
+
+    </script>
+</body>
+</html>

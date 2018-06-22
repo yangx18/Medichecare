@@ -1,0 +1,21 @@
+{
+  "name": "MedchineCare",
+  "version": "1.0.0",
+  "description": " medication web applicationk",
+  "main": "main.js",
+  "scripts": {
+    
+  },
+  "author": "Yang",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.0.0",
+    "request": "^2.70",
+    "jasmine": "^2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.6"
+  }
+}
